@@ -1,16 +1,28 @@
-# React + Vite
+# Without Aimata
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This project is the baseline version of the weather dashboard.
 
-Currently, two official plugins are available:
+It uses a standard verbose React structure, with explicit app state, repeated field definitions, and a full project explanation style that is common in normal repo-based AI work.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What this demonstrates
 
-## React Compiler
+This is the "without project compression" baseline for the same weather app task.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app includes:
 
-## Expanding the Oxlint configuration
+- weather lookup by city
+- current weather and highlights
+- 5-day forecast
+- recent city history stored in localStorage
+- loading and error handling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Project-level comparison
+
+This repo is intentionally designed to be the verbose counterpart to the Aimata-style version. The same feature set is implemented in both apps so the only major difference is the project briefing and context style.

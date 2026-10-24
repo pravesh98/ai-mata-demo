@@ -1,22 +1,25 @@
-# With Aimata Weather Demo
+# With Aimata
 
-This project demonstrates the same weather dashboard as the companion `without-aimata` app, but with a compact, AI-friendly state shape inspired by Aimata DSL patterns.
+This project is the compact, project-aware version of the same weather dashboard.
 
-## Features
+It demonstrates the value of Aimata-style project structure: the app keeps the same user-facing behavior, but the context needed to explain the project to an AI agent is cleaner and more compact.
 
-- live weather search using Open-Meteo
-- recent city history
-- local cache with localStorage
-- 5-day forecast
-- compact data model and field grouping for better AI readability
+## What this demonstrates
 
-## Run it locally
+This version is intentionally structured around a smaller, more reusable app schema:
+
+- weather(city) -> summary + current + forecast + cache
+- compact feature contract
+- reduced repeated field explanations
+- lower context overhead for AI-assisted project work
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Aimata framing
+## Project-level comparison
 
-The UI remains equivalent to the non-Aimata version, while the underlying data shape is simplified and more compact. This is the kind of project-level context optimization Aimata is meant to help with.
+This repo is meant to be compared directly with the `without-aimata` version. The same task and same UI are kept consistent while the project briefing and structure become more compressed and AI-friendly.

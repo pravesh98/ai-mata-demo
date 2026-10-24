@@ -1,0 +1,8 @@
+{
+  "name": "aimata-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "measure:tokens": "node scripts/context-estimate.js"
+  }
+}
