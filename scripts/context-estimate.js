@@ -1,34 +1,34 @@
 const withoutAimataPrompt = `
-Build a React weather dashboard app in a Vite project with the standard structure.
-The app should have a root App.jsx file, an App.css file, an index.css file, and a main.jsx file.
-Use useState for search query, weather result, loading state, error state, and history state.
-Use useEffect to load the initial city when the page mounts.
-Use useMemo for derived highlight cards such as feels-like temperature, humidity, and wind.
-Create a search form with a text input and a button that triggers a fetch to the Open-Meteo geocoding API.
-After a city is resolved, fetch forecast data with a second API call using latitude and longitude.
-Normalize the response into a JavaScript object with city, country, summary, current temperature, humidity, wind, and a forecast array.
-Display a hero section with location label, current condition, and current temperature.
-Display highlight cards for feels-like temperature, humidity, and wind speed.
-Render a 5-day forecast grid with each day showing label, condition text, high temp, and low temp.
-Persist the last searched cities in localStorage so they appear as clickable chips below the search bar.
-Handle loading state with a disabled button label of Loading...
-Handle empty query and not-found states with an error message.
-Keep the data model verbose and explicit: each field is described individually and each state update is separated.
-Keep the UI logic split across multiple handlers and repeated conditional blocks.
-The project should feel like a conventional React app with no compression layer and no project-level AI schema definition.
-The explanation should be long because the app is described with repeated field names and explicit state flow.
-This is a normal full project description with dispersed responsibilities and an expanded structure for AI tools to interpret.
+Build a React weather dashboard app in a standard Vite project.
+The app should have a root App.jsx file, a main.jsx file, an App.css file, and a shared CSS file.
+Use useState for city query, weather object, loading flag, error message, and recent history array.
+Use useEffect to trigger a default city load on mount.
+Use useMemo for derived highlight cards like feels-like temperature, humidity, and wind.
+Create a search form with a text box and a button that calls the geocoding API with the city name.
+Then resolve the city coordinates and fetch the weather forecast for the location.
+Normalize the response into a weather object containing city, country, summary, current temperature, humidity, wind speed, and a forecast array.
+Render a hero section showing the city name, condition summary, and main temperature.
+Render highlight cards for feels-like temperature, humidity, and wind speed.
+Render a 5-day forecast grid with each day showing label, condition text, high value, and low value.
+Persist the last visited cities in localStorage so they appear as clickable chips below the search bar.
+Handle loading states by disabling the button and showing the text Loading...
+Handle invalid input and not-found cases by showing an error banner.
+Keep the data model explicit and verbose, with separate state values for each concept.
+Describe every part of the app in a conventional, long-form way so the AI has to parse all fields and state transitions individually.
+This is a generic project description for the normal app structure and is intentionally repetitive because the workflow does not use project-level compression.
+The app should feel like a standard weather dashboard built without a compact schema or repo-level context file.
+The AI has to understand scattered state variables, multiple handlers, repeated field names, and a longer project story to make change safely.
+The result is a verbose explanation because the project is not expressed as a compact app contract.
+The task should remain the same as the Aimata version, but the standard project context is larger and noisier.
 `
 
 const withAimataPrompt = `
-Build the same React weather dashboard using an Aimata project-level structure.
-The project definition should compress the app contract into a compact schema: weather(city) -> summary, current, forecast, cache, history.
-Use project-level rules to describe the feature once, then let the app reuse the same structure across UI, state, and fetch logic.
-The app can still render the same weather card layout, forecast grid, and search history, but the AI context should stay compact and readable.
-Keep the canonical data model small: city, summary, current, forecast, cache.
-Explain only the essential app contract instead of repeating all of the verbose state and field details.
-Reduce prompt noise and reuse one shared structure so the AI understands the project faster with less context overhead.
-This is the value of Aimata: the same app, fewer repeated explanations, lower token usage, and clearer project-level understanding.
+Build the same weather dashboard using a compact Aimata project model.
+The app contract is small: weather(city) -> summary + current + forecast + history + cache.
+Keep the same feature set and output, but express the app as a single compact schema instead of many verbose state definitions.
+Use project-level rules to explain the app once rather than repeating field names across many sections.
+The AI can reason from a shorter, structured contract with less noise and less repeated context.
+This is the Aimata benefit: same app, lower project-level prompt overhead, clearer project understanding, and less context bloat.
 `
 
 function estimateTokens(text) {
