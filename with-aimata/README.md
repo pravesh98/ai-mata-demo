@@ -6,18 +6,29 @@ It demonstrates the value of Aimata-style project structure: the app keeps the s
 
 ## How this version was created
 
-This app was intentionally created in a step-by-step way to show how project-level structure leads to lower token usage.
+This app was intentionally created to illustrate the real project-level Aimata workflow, not just an import or a library code snippet.
 
-1. Start with the same weather dashboard concept as the `without-aimata` version.
-2. Keep the feature set identical: city search, current conditions, forecast cards, recent cities, loading state, and error handling.
-3. Replace the long, repeated app narrative with a compact project contract.
-4. Model the app as a smaller schema:
+1. Start with a fresh app idea: a weather dashboard with search, recent cities, loading/error states, and a 5-day forecast.
+2. Initialize the project with the Aimata repo-level setup flow.
+3. Add the repo-wide AI instructions for the tools you are using, such as Cursor rules, Claude rules, and Copilot guidance.
+4. Add a compact project definition that tells the AI the app contract in a small, reusable format:
    - weather(city) -> summary + current + forecast + history + cache
-5. Remove repeated explanations of state, fetch flow, and UI data mapping from the project brief.
-6. Keep the product behavior and component logic intact, but express the project in a simpler, more reusable structure.
-7. Use this smaller repo-level description when interacting with an AI assistant so the same task is explained with less prompt overhead.
+5. Ask the AI to generate the app based on that project-level understanding instead of a long, repeated feature narrative.
+6. Keep the product behavior and UI intent identical to the verbose baseline while reducing the amount of project context the model needs to hold.
+7. Let the generated app use the same weather data flow, but under a smaller and cleaner repo-level contract.
+8. Compare the output with the standard version to show that the project-level workflow reduces prompt size and token usage without changing the product outcome.
 
-This is the important shift: the app is not fundamentally different, but the amount of project context needed to describe it is smaller.
+This is the important shift: the app is not fundamentally different, but the project context that describes it is much smaller and more reusable.
+
+In a real repo, the flow is:
+
+```bash
+npx aimata-dsl init
+```
+
+Then the repo gets AI instructions for Cursor, Claude, or Copilot, and the AI works from that shared project-level guidance instead of re-learning the same structure across every file.
+
+That is the actual project-level value: configure the repo once, then let the agent generate and update the app using a smaller context footprint.
 
 ## Why this leads to lower token use
 
